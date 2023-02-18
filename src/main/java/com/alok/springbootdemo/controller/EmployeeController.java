@@ -22,4 +22,9 @@ public class EmployeeController {
     public List<Employee> getAllEmployees() {
         return employeeService.getAllEmployees();
     }
+
+    @GetMapping("/{id}")
+    public Employee getEmployeeById(@PathVariable("id") String employeeId) {
+        return employeeService.getEmployeeById(employeeId);
+    }
 }
