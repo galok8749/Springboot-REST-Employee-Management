@@ -10,4 +10,5 @@ public interface EmployeeService {
     public List<Employee> getAllEmployees();
 
     public Employee getEmployeeById(String employeeId);
+    public String deleteEmployeeById(String employeeId);
 }
