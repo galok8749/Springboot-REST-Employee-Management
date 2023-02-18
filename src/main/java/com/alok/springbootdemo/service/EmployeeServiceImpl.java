@@ -1,6 +1,7 @@
 package com.alok.springbootdemo.service;
 
 import com.alok.springbootdemo.controller.EmployeeController;
+import com.alok.springbootdemo.exception.EmployeeNotFoundException;
 import com.alok.springbootdemo.model.Employee;
 import org.springframework.stereotype.Service;
 
@@ -38,6 +39,6 @@ public class EmployeeServiceImpl implements EmployeeService{
         return employees.stream()
                 .filter(employee -> employee.getEmployeeId().equals(employeeId))
                 .findFirst()
-                .get();
+                .orElseThrow(()-> new EmployeeNotFoundException("Employee not found with id " + employeeId));
     }
 }
