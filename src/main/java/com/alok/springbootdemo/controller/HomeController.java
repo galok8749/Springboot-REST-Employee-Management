@@ -21,4 +21,9 @@ public class HomeController {
 
         return user;
     }
+
+    @GetMapping("/{id}/{id2}")
+    public String pathVariable(@PathVariable String id, @PathVariable("id2") String name) {
+        return "The path variables are: " + id + " " + name;
+    }
 }
