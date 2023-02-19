@@ -53,6 +53,7 @@ public class EmployeeV2ServiceImpl implements EmployeeService {
 
     @Override
     public String deleteEmployeeById(String employeeId) {
-        return null;
+        employeeRepository.deleteById(employeeId);
+        return "Employee deleted with id: " + employeeId;
     }
 }
